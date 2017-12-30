@@ -73,7 +73,7 @@ function sendTextMessage(sender, text) {
 
 function sendButtonMessage(sender,text,menu)
 {
-	if (menu=="inicial")
+	if (menu.includes("inicial"))
 	{
 		let messageData = 
 		{
