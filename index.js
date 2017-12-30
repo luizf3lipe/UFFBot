@@ -34,7 +34,11 @@ app.post('/webhook/', function (req, res) {
 	    if (event.message && event.message.text) {
 		    let text = event.message.text
 		    decideMessage(sender,text)
-		    sendTextMessage(sender, "Vem que tem")
+	    }
+	    if (event.postback)
+	    {
+	    	let text = JSON.stringify(event.postback)
+	    	decideMessage(sender,text)
 	    }
     }
     res.sendStatus(200)
@@ -45,17 +49,45 @@ function decideMessage(sender,text1)
 	let text = text1.toLowerCase()
 	if(text.includes("oi"))
 	{
-		sendTextMessage(sender, "Tchau")
+		sendTextMessage(sender,"Insira sua Matricula")
 	}
-	else if (text.includes("lolzin"))
+	if (text.includes("038") 
 	{
-		sendTextMessage(sender,"Rexpeita o bot")
+		sendButtonMessage(sender,"Ola aluno de engenharia,o que quer fazer?")
 	}
 }
 
 function sendTextMessage(sender, text) {
     let messageData = { text:text }
-    request({
+    sendRequest(sender,messageData)
+    
+}
+
+function sendButtonMessage(sender,text)
+{
+	let messageData = 
+	{
+		"type":"template",
+    	"payload":
+        {
+        	"template_type":"button",
+        	"text":text,
+        	"buttons":
+        	[
+        		{
+            		"type":"postback",
+            		"title":"Materias"
+            		"payload":"Materias"
+          		}
+        	]
+        }
+	}
+	sendRequest(sender,messageData)
+}
+
+function sendRequest(sender,messageData)
+{
+	request({
 	    url: 'https://graph.facebook.com/v2.6/me/messages',
 	    qs: {access_token:token},
 	    method: 'POST',
@@ -71,6 +103,7 @@ function sendTextMessage(sender, text) {
 	    }
     })
 }
+
 
 const token = "EAACROVu6xPIBAK4zZBrblkKKQOYdoFKKoUDpZBiKVug4qk5KHPelIxFqCtRb5e6WbqCI3511QOOMyummVxd8Krrm2aTdsByuISYIIy3vSKSuJFF16GMEc8OfWICApU1IaLDvZAeGiH7ZCFVwBbCv1sidcOSx2zQ3l9QjFiFnCAZDZD"
 
