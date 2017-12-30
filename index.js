@@ -53,7 +53,7 @@ function decideMessage(sender,text1)
 	}
 	else if (text.includes("038") 
 	{
-		sendButtonMessage(sender,"Ola aluno de engenharia o que quer fazer?")
+		sendButtonMessage(sender,"Ola Aluno da engenharia o que quer fazer")
 	}
 }
 
