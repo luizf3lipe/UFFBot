@@ -53,7 +53,7 @@ function decideMessage(sender,text1)
 	}
 	else if (text.includes("038")) 
 	{
-		sendButtonMessage(sender,"Ola Aluno da engenharia ,o que quer fazer?","inicial")
+		sendButtonMessage(sender,"Ola Aluno da engenharia ,o que quer fazer?")
 	}
 	else if (text.includes("materias")) 
 	{
@@ -71,11 +71,8 @@ function sendTextMessage(sender, text) {
     
 }
 
-function sendButtonMessage(sender,text,menu)
+function sendButtonMessage(sender,text)
 {
-	let menu = menu.toLowerCase()
-	if (menu.includes("inicial"))
-	{
 		let messageData = 
 		{
 			"attachment":
@@ -101,7 +98,6 @@ function sendButtonMessage(sender,text,menu)
 		        }
 	    	}
 		}
-	}
 	sendRequest(sender,messageData)
 }
 
