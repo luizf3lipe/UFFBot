@@ -51,9 +51,9 @@ function decideMessage(sender,text1)
 	{
 		sendTextMessage(sender,"Insira sua Matricula")
 	}
-	else if (text.includes("038") 
+	else if (text.includes("038")) 
 	{
-		sendButtonMessage(sender,"Ola Aluno da engenharia o que quer fazer")
+		sendButtonMessage(sender,"Ola Aluno da engenharia ,o que quer fazer?")
 	}
 }
 
@@ -76,7 +76,7 @@ function sendButtonMessage(sender,text)
         	[
         		{
             		"type":"postback",
-            		"title":"Materias"
+            		"title":"Materias",
             		"payload":"Materias"
           		}
         	]
