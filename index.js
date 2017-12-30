@@ -59,7 +59,10 @@ function decideMessage(sender,text1)
 	{
 		sendTextMessage(sender,"Chora")
 	}
-
+	else if (text.includes("pergunta")) 
+	{
+		sendTextMessage(sender,"Chora mais")
+	}
 }
 
 function sendTextMessage(sender, text) {
