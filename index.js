@@ -26,6 +26,7 @@ app.get('/webhook/', function (req, res) {
 	res.send('Error, wrong token')
 })
 
+/*
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
@@ -42,7 +43,7 @@ let queryMessage= con.query("SELECT  nome FROM seguranca where id=1", function (
     console.log(result);
   });
 });
-
+*/
 
 
 app.post('/webhook/', function (req, res) {
@@ -76,7 +77,7 @@ function decideMessage(sender,text1)
 	}
 	else if (text.includes("materias")) 
 	{
-		sendTextMessage(sender,queryMessage)
+		sendTextMessage(sender,"Chora")
 	}
 	else if (text.includes("pergunta")) 
 	{
