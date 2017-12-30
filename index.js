@@ -57,7 +57,7 @@ function decideMessage(sender,text1)
 	}
 	else if (text.includes("materias")) 
 	{
-		sendButtonMessage(sender,"Chora")
+		sendTextMessage(sender,"Chora")
 	}
 
 }
