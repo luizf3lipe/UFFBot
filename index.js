@@ -77,7 +77,7 @@ function decideMessage(sender,text1)
 	}
 	else if (text.includes("materias")) 
 	{
-		sendTextMessage(sender,"Chora"
+		sendTextMessage(sender,"Chora")
 	}
 	else if (text.includes("pergunta")) 
 	{
