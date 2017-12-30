@@ -67,25 +67,28 @@ function sendButtonMessage(sender,text)
 {
 	let messageData = 
 	{
-		"type":"template",
-    	"payload":
-        {
-        	"template_type":"button",
-        	"text":text,
-        	"buttons":
-        	[
-        		{
-            		"type":"postback",
-            		"title":"Materias",
-            		"payload":"materias"
-          		},
-          		{
-            		"type":"postback",
-            		"title":"Pergunta",
-            		"payload":"pergunta"
-          		},
-        	]
-        }
+		"attachment":
+		{
+			"type":"template",
+	    	"payload":
+	        {
+	        	"template_type":"button",
+	        	"text":text,
+	        	"buttons":
+	        	[
+	        		{
+	            		"type":"postback",
+	            		"title":"Materias",
+	            		"payload":"materias"
+	          		},
+	          		{
+	            		"type":"postback",
+	            		"title":"Pergunta",
+	            		"payload":"pergunta"
+	          		}
+	        	]
+	        }
+    	}
 	}
 	sendRequest(sender,messageData)
 }
