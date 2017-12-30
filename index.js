@@ -77,8 +77,13 @@ function sendButtonMessage(sender,text)
         		{
             		"type":"postback",
             		"title":"Materias",
-            		"payload":"Materias"
-          		}
+            		"payload":"materias"
+          		},
+          		{
+            		"type":"postback",
+            		"title":"Pergunta",
+            		"payload":"pergunta"
+          		},
         	]
         }
 	}
