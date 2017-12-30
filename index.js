@@ -53,7 +53,7 @@ function decideMessage(sender,text1)
 	}
 	else if (text.includes("038")) 
 	{
-		sendButtonMessage(sender,"Ola Aluno da engenharia ,o que quer fazer?")
+		sendButtonMessage(sender,"Ola Aluno da engenharia ,o que quer fazer?","inicial")
 	}
 	else if (text.includes("materias")) 
 	{
@@ -71,32 +71,35 @@ function sendTextMessage(sender, text) {
     
 }
 
-function sendButtonMessage(sender,text)
+function sendButtonMessage(sender,text,menu)
 {
-	let messageData = 
+	if (menu=="inicial")
 	{
-		"attachment":
+		let messageData = 
 		{
-			"type":"template",
-	    	"payload":
-	        {
-	        	"template_type":"button",
-	        	"text":text,
-	        	"buttons":
-	        	[
-	        		{
-	            		"type":"postback",
-	            		"title":"Materias",
-	            		"payload":"materias"
-	          		},
-	          		{
-	            		"type":"postback",
-	            		"title":"Pergunta",
-	            		"payload":"pergunta"
-	          		}
-	        	]
-	        }
-    	}
+			"attachment":
+			{
+				"type":"template",
+		    	"payload":
+		        {
+		        	"template_type":"button",
+		        	"text":text,
+		        	"buttons":
+		        	[
+		        		{
+		            		"type":"postback",
+		            		"title":"Materias",
+		            		"payload":"materias"
+		          		},
+		          		{
+		            		"type":"postback",
+		            		"title":"Pergunta",
+		            		"payload":"pergunta"
+		          		}
+		        	]
+		        }
+	    	}
+		}
 	}
 	sendRequest(sender,messageData)
 }
