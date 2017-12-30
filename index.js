@@ -51,7 +51,7 @@ function decideMessage(sender,text1)
 	{
 		sendTextMessage(sender,"Insira sua Matricula")
 	}
-	if (text.includes("038") 
+	else if (text.includes("038") 
 	{
 		sendButtonMessage(sender,"Ola aluno de engenharia o que quer fazer?")
 	}
