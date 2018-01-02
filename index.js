@@ -83,6 +83,18 @@ function decideMessage(sender,text1)
 	{
 		sendTextMessage(sender,"Chora mais")
 	}
+	else if (text.includes("salasehorarios")) 
+	{
+		sendTextMessage(sender,"A hora que eu quiser")
+	}
+	else if (text.includes("notas")) 
+	{
+		sendTextMessage(sender,"0 pra geral")
+	}
+	else if (text.includes("testes")) 
+	{
+		sendTextMessage(sender,"Calcule a massa do sol")
+	}
 }
 
 function sendTextMessage(sender, text) {
@@ -150,6 +162,67 @@ function sendButtonMessage(sender,text,modo)
 		            		"type":"postback",
 		            		"title":"Pergunta",
 		            		"payload":"pergunta"
+		          		}
+		        	]
+		        }
+	    	}
+		}
+	}
+	else if (modo.includes("monitor")) 
+	{
+		messageData = 
+		{
+			"attachment":
+			{
+				"type":"template",
+		    	"payload":
+		        {
+		        	"template_type":"button",
+		        	"text":text,
+		        	"buttons":
+		        	[
+		        		{
+		            		"type":"postback",
+		            		"title":"Materias",
+		            		"payload":"materias"
+		          		},
+		          		{
+		            		"type":"postback",
+		            		"title":"Pergunta",
+		            		"payload":"pergunta"
+		          		},
+		          		{
+		            		"type":"postback",
+		            		"title":"Salas e Horarios",
+		            		"payload":"salasehorarios"
+		          		}
+		        	]
+		        }
+	    	}
+		}
+	}
+	else if (modo.includes("professor")) 
+	{
+		messageData = 
+		{
+			"attachment":
+			{
+				"type":"template",
+		    	"payload":
+		        {
+		        	"template_type":"button",
+		        	"text":text,
+		        	"buttons":
+		        	[
+		        		{
+		            		"type":"postback",
+		            		"title":"Notas",
+		            		"payload":"notas"
+		          		},
+		          		{
+		            		"type":"postback",
+		            		"title":"Testes",
+		            		"payload":"testes"
 		          		}
 		        	]
 		        }
