@@ -12,6 +12,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mariasql": "^0.2.6",
+    "mysql": "^2.15.0",
     "request": "^2.83.0"
   }
 }

@@ -4,6 +4,25 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
+const mysql = require('mysql');
+
+const db = mysql.createConnection({
+
+        host:           'localhost',
+        user:           'root',
+        password:       'guilherme27',
+        database:       'uffbot'
+
+});
+
+db.connect((err) => {
+        if(err){
+                throw err;
+        }
+        console.log('Mysql Connected');
+
+});
+
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -25,25 +44,6 @@ app.get('/webhook/', function (req, res) {
 	}
 	res.send('Error, wrong token')
 })
-
-/*
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "guilherme27",
-  database: "uffbot"
-});
-
-con.connect(function(err) {
-  if (err) throw err;
-let queryMessage= con.query("SELECT  nome FROM seguranca where id=1", function (err, result, fields) {
-    if (err) throw err;
-    console.log(result);
-  });
-});
-*/
 
 
 app.post('/webhook/', function (req, res) {
@@ -110,6 +110,24 @@ function sendTextMessage(sender, text) {
     sendRequest(sender,messageData)
     
 }
+
+
+
+function connectQuery(sender,text){
+
+	app.get((req,res) => {
+
+        let sql='SELECT * FROM  professor where id = 1;';
+        db.query(sql,(err,result)=>{
+                if(err)throw(err);
+                console.log(result);
+                
+        })
+})
+
+
+}
+
 
 function sendButtonMessage(sender,text,modo)
 {
