@@ -49,11 +49,11 @@ function decideMessage(sender,text1)
 	let text = text1.toLowerCase()
 	if(text.includes("oi"))
 	{
-		sendTextMessage(sender,"Insira sua Matricula")
+		sendButtonMessage(sender,"O que voce e?","start")
 	}
-	else if (text.includes("038")) 
+	else if (text.includes("aluno")) 
 	{
-		sendButtonMessage(sender,"Ola Aluno da engenharia ,o que quer fazer?")
+		sendButtonMessage(sender,"Ola Aluno da engenharia ,o que quer fazer?","aluno")
 	}
 	else if (text.includes("materias")) 
 	{
@@ -71,8 +71,43 @@ function sendTextMessage(sender, text) {
     
 }
 
-function sendButtonMessage(sender,text)
+function sendButtonMessage(sender,text,modo)
 {
+	if(modo.includes("start"))
+	{
+		let messageData = 
+		{
+			"attachment":
+			{
+				"type":"template",
+		    	"payload":
+		        {
+		        	"template_type":"button",
+		        	"text":text,
+		        	"buttons":
+		        	[
+		        		{
+		            		"type":"postback",
+		            		"title":"Aluno",
+		            		"payload":"aluno"
+		          		},
+		          		{
+		            		"type":"postback",
+		            		"title":"Monitor",
+		            		"payload":"monitor"
+		          		},
+		          		{
+		            		"type":"postback",
+		            		"title":"Professor",
+		            		"payload":"professor"
+		          		}
+		        	]
+		        }
+	    	}
+		}
+	}
+	else if (modo.includes("aluno")) 
+	{
 		let messageData = 
 		{
 			"attachment":
@@ -98,6 +133,7 @@ function sendButtonMessage(sender,text)
 		        }
 	    	}
 		}
+	}
 	sendRequest(sender,messageData)
 }
 
