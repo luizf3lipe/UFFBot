@@ -97,7 +97,7 @@ function sendButtonMessage(sender,text,modo)
 
 	if(modo.includes("start"))
 	{
-		let messageData = 
+		messageData = 
 		{
 			"attachment":
 			{
@@ -130,7 +130,7 @@ function sendButtonMessage(sender,text,modo)
 	}
 	else if (modo.includes("aluno")) 
 	{
-		let messageData = 
+		messageData = 
 		{
 			"attachment":
 			{
