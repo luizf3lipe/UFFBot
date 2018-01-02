@@ -26,6 +26,26 @@ app.get('/webhook/', function (req, res) {
 	res.send('Error, wrong token')
 })
 
+/*
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "guilherme27",
+  database: "uffbot"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+let queryMessage= con.query("SELECT  nome FROM seguranca where id=1", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+});
+*/
+
+
 app.post('/webhook/', function (req, res) {
     let messaging_events = req.body.entry[0].messaging
     for (let i = 0; i < messaging_events.length; i++) {
