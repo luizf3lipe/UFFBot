@@ -93,7 +93,7 @@ function sendTextMessage(sender, text) {
 
 function sendButtonMessage(sender,text,modo)
 {
-	if(modo.includes("start"))
+	/*if(modo.includes("start"))
 	{
 		let messageData = 
 		{
@@ -125,9 +125,9 @@ function sendButtonMessage(sender,text,modo)
 		        }
 	    	}
 		}
-	}
-	else if (modo.includes("aluno")) 
-	{
+	}*/
+	//else if (modo.includes("aluno")) 
+	//{
 		let messageData = 
 		{
 			"attachment":
@@ -153,7 +153,7 @@ function sendButtonMessage(sender,text,modo)
 		        }
 	    	}
 		}
-	}
+	//}
 	sendRequest(sender,messageData)
 }
 
