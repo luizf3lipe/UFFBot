@@ -93,8 +93,8 @@ function sendTextMessage(sender, text) {
 
 function sendButtonMessage(sender,text,modo)
 {
-	let messageData
-	
+	let messageData;
+
 	if(modo.includes("start"))
 	{
 		let messageData = 
