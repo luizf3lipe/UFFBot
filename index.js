@@ -75,6 +75,14 @@ function decideMessage(sender,text1)
 	{
 		sendButtonMessage(sender,"Ola Aluno da engenharia ,o que quer fazer?","aluno")
 	}
+	else if (text.includes("monitor")) 
+	{
+		sendButtonMessage(sender,"Ola Monitor da engenharia ,o que quer fazer?","monitor")
+	}
+	else if (text.includes("professor")) 
+	{
+		sendButtonMessage(sender,"Ola Professor da engenharia ,o que quer fazer?","professor")
+	}
 	else if (text.includes("materias")) 
 	{
 		sendTextMessage(sender,"Chora")
