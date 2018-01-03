@@ -10,8 +10,8 @@ const db = mysql.createConnection({
 
         host:           'localhost',
         user:           'root',
-        password:       'guilherme27',
-        database:       'uffbot'
+        password:       '105709lf',
+        database:       'UFFBot'
 
 });
 
@@ -112,22 +112,21 @@ function sendTextMessage(sender, text) {
 }
 
 
+function selectQuery(sender,text){
 
-function connectQuery(sender,text){
+	let sql;
 
 	app.get((req,res) => {
 
-        let sql='SELECT * FROM  professor where id = 1;';
+        sql='SELECT * FROM  professor where id = 1;';
         db.query(sql,(err,result)=>{
                 if(err)throw(err);
                 console.log(result);
                 
         })
-})
-
+	})
 
 }
-
 
 function sendButtonMessage(sender,text,modo)
 {

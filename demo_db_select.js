@@ -3,14 +3,14 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "guilherme27",
-  database: "uffbot"
+  password: "105709lf",
+  database: "UFFBot"
 });
 
 
 var someVar = [];
 
-con.query("select * from seguranca where id=1", function(err, rows){
+con.query("select * from professor where id=1", function(err, rows){
   if(err) {
     throw err;
   } else {
