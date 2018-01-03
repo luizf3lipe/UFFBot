@@ -112,7 +112,7 @@ function sendTextMessage(sender, text) {
 }
 
 
-function selectQuery(sender,text){
+/*function selectQuery(sender,text){
 
 	let sql;
 
@@ -126,7 +126,7 @@ function selectQuery(sender,text){
         })
 	})
 
-}
+}*/
 
 function sendButtonMessage(sender,text,modo)
 {
